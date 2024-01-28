@@ -19,6 +19,7 @@
 # misc
 .DS_Store
 *.pem
+contentful-import-error-log-*
 
 # debug
 npm-debug.log*
