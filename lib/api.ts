@@ -55,6 +55,10 @@ function extractPostEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.postCollection?.items;
 }
 
+function extractPhotoEntries(fetchResponse: any): any[] {
+  return fetchResponse?.data?.photoCollection?.items;
+}
+
 export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
@@ -68,6 +72,30 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   );
   return extractPost(entry);
 }
+
+export async function getAllPhotos(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `query {
+  photoCollection {
+    items {
+      photo {
+        url
+        title
+        width
+        height
+        contentfulMetadata {
+          tags {
+            name
+          }
+        }
+      }
+    }
+  }
+}`,
+isDraftMode,
+  )
+  return extractPhotoEntries(entries)
+};
 
 export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
