@@ -66,8 +66,6 @@ export default async function Page() {
 
   return (
     <div className="container mx-auto px-5">
-    
-      Gallery 
       {allPhotos.map(photo => (
         <ContentfulImage
           key={photo.photo.title}
