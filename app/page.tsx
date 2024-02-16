@@ -56,24 +56,19 @@ function HeroPost({
 
 export default async function Page() {
   const { isEnabled } = draftMode();
-  const allPosts = await getAllPosts(isEnabled);
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
 
   const allPhotos = await getAllPhotos(isEnabled)
-  const heroImage = allPhotos[1]
-
 
   return (
     <div className="container mx-auto px-5">
-      {allPhotos.map(photo => (
+      {allPhotos.map((photo, i) => (
         <ContentfulImage
           key={photo.photo.title}
           alt="A photo"
           width={2000}
           height={1000}
           className={cn("shadow-small", {
-        "hover:shadow-medium transition-shadow duration-200": photo.url,
+        "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
       })}
         src={photo.photo.url}
         />

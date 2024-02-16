@@ -73,6 +73,49 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   return extractPost(entry);
 }
 
+export async function getPersonalPhotos(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(`
+  query {
+  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "personal"}}}) {
+    items {
+      photo {
+        url
+        width
+        height
+        contentfulMetadata {
+          tags {
+            name
+            id
+          }
+        }
+      }
+    }
+  }
+}`, isDraftMode)
+return extractPhotoEntries(entries)
+} 
+export async function getCommercialPhotos(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(`
+  query {
+  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "commercial"}}}) {
+    items {
+      photo {
+        url
+        width
+        height
+        contentfulMetadata {
+          tags {
+            name
+            id
+          }
+        }
+      }
+    }
+  }
+}`, isDraftMode)
+return extractPhotoEntries(entries)
+} 
+
 export async function getAllPhotos(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
