@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { EXAMPLE_PATH, CMS_NAME } from "@/lib/constants";
+import { CMS_NAME } from "@/lib/constants";
 import Link from  "next/link";
 
 export const metadata = {
@@ -16,13 +16,13 @@ const inter = Inter({
 
 function Intro() {
   return (
-    <section  className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 mx-1.5" >
+    <section  className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 mx-1.5 sticky" >
       <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
         Logo
       </h1>
       <div  className="md:text-left text-lg mt-5 md:pl-8">
         
-       <Link href={`//`} className="mx-1.5 hover:underline">
+       <Link href={`/`} className="mx-1.5 hover:underline">
               Home
         </Link>
        <Link href={`/commercial/`} className="mx-1.5 hover:underline">
@@ -38,8 +38,8 @@ function Intro() {
 
 function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <div className="flex justify-center">
+    <footer className="bg-accent-1 border-t border-accent-2 sticky">
+      <div className="flex justify-center py-5">
         <a href="https://www.instagram.com/angie_baurana/" target="_blank" rel="noopener noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
