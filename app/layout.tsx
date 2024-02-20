@@ -10,6 +10,7 @@ export const metadata = {
 
 const inter = Inter({
   variable: "--font-inter",
+  weight: '400',
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,7 +23,7 @@ function Intro() {
       </h1>
       <div  className="md:text-left text-lg mt-5 md:pl-8">
         
-       <Link href={`//`} className="mx-1.5 hover:underline">
+       <Link href={`/`} className="mx-1.5 hover:underline">
               Home
         </Link>
        <Link href={`/commercial/`} className="mx-1.5 hover:underline">
@@ -71,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.className} antialiased`}>
       <body>
         <section className="min-h-screen">
         <Intro />
