@@ -14,7 +14,7 @@ export default async function CommercialPage() {
          <div className="container mx-auto px-5">
       {allPhotos.map((photo, ind) => (
         <ContentfulImage
-          key={` ${ind} - ${photo.photo.title}`}
+          key={photo.photo.url}
           alt="A photo"
           width={1800}
           height={900}

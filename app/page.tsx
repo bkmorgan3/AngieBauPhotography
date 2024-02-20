@@ -61,9 +61,9 @@ export default async function Page() {
 
   return (
     <div className="container mx-auto px-5">
-      {allPhotos.map((photo, i) => (
+      {allPhotos.map(photo => (
         <ContentfulImage
-          key={photo.photo.title}
+          key={photo.photo.url}
           alt="A photo"
           width={2000}
           height={1000}
