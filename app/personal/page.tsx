@@ -9,23 +9,24 @@ function cn(...classes: any[]) {
 export default async function PersonalPage() {
       const { isEnabled } = draftMode();
 
-  const allPhotos = await getPersonalPhotos(isEnabled)
-    return (
-         <div className="container mx-auto px-5">
+  const allPhotos = await getPersonalPhotos(isEnabled);
+
+  return (
+    <div className="container flex flex-wrap justify-center mx-auto px-5">
       {allPhotos.map(photo => (
         <ContentfulImage
-          key={photo.photo.url}
-          alt="A photo"
-          width={2000}
-          height={1000}
-          className={cn("shadow-small", {
+          key={photo.photo.title}
+          alt={photo.photo.description}
+          width={700}
+          height={600}
+          className={cn("md:w-1/2 shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
       })}
         src={photo.photo.url}
         />
       ))}
     </div>
-    )
+  )
 }
 
 

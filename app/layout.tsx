@@ -10,11 +10,12 @@ export const metadata = {
 
 const inter = Inter({
   variable: "--font-inter",
+  weight: '400',
   subsets: ["latin"],
   display: "swap",
 });
 
-function Intro() {
+function Nav() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 mx-1.5" >
       <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
@@ -72,10 +73,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.className} antialiased`}>
       <body>
         <section className="min-h-screen">
-          <Intro />
+        <Nav />
           <main>{children}</main>
           <Footer />
         </section>
