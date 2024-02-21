@@ -18,7 +18,7 @@ export default async function PersonalPage() {
           alt={photo.photo.description}
           width={700}
           height={600}
-          className={cn("shadow-small", {
+          className={cn("md:w-1/2 shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
       })}
         src={photo.photo.url}
