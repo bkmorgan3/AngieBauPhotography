@@ -11,13 +11,13 @@ export default async function PersonalPage() {
 
   const allPhotos = await getPersonalPhotos(isEnabled)
     return (
-         <div className="container mx-auto px-5">
+         <div className="container mx-auto px-5 flex flex-wrap">
       {allPhotos.map(photo => (
         <ContentfulImage
           key={photo.photo.title}
-          alt="A photo"
-          width={2000}
-          height={1000}
+          alt={photo.photo.description}
+          width={700}
+          height={600}
           className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
       })}

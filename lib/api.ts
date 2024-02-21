@@ -81,6 +81,8 @@ export async function getPersonalPhotos(isDraftMode: boolean): Promise<any[]> {
       photo {
         url
         width
+        title
+        description
         height
         contentfulMetadata {
           tags {
@@ -101,6 +103,8 @@ export async function getCommercialPhotos(isDraftMode: boolean): Promise<any[]> 
     items {
       photo {
         url
+        title
+        description
         width
         height
         contentfulMetadata {
@@ -123,6 +127,7 @@ export async function getAllPhotos(isDraftMode: boolean): Promise<any[]> {
     items {
       photo {
         url
+        description
         title
         width
         height

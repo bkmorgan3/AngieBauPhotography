@@ -10,14 +10,15 @@ export default async function CommercialPage() {
       const { isEnabled } = draftMode();
 
   const allPhotos = await getCommercialPhotos(isEnabled)
+  
     return (
-         <div className="container mx-auto px-5">
-      {allPhotos.map((photo, ind) => (
+         <div className="container flex flex-wrap mx-auto px-5">
+      {allPhotos.map(photo => (
         <ContentfulImage
-          key={` ${ind} - ${photo.photo.title}`}
-          alt="A photo"
-          width={1800}
-          height={900}
+          key={photo.photo.title}
+          alt={photo.photo.description}
+          width={700}
+          height={600}
           className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
       })}
