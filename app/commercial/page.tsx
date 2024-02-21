@@ -11,8 +11,8 @@ export default async function CommercialPage() {
 
   const allPhotos = await getCommercialPhotos(isEnabled)
 
-    return (
-         <div className="container flex flex-wrap mx-auto px-5">
+  return (
+    <div className="container flex flex-wrap justify-center mx-auto px-5">
       {allPhotos.map(photo => (
         <ContentfulImage
           key={photo.photo.title}
@@ -25,8 +25,8 @@ export default async function CommercialPage() {
         src={photo.photo.url}
         />
       ))}
-    </div>
-    )
+  </div>
+  )
 }
 
 

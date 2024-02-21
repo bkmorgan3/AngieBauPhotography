@@ -1,5 +1,4 @@
 import { draftMode } from "next/headers";
-
 import {  getAllPhotos } from "@/lib/api";
 import ContentfulImage from "@/lib/contentful-image";
 
