@@ -33,7 +33,7 @@ function Nav() {
               Personal
         </Link>
        <Link href={`/contact/`} className="mx-1.5 hover:underline">
-              Contact Me
+              Contact
         </Link>
       </div>
     </section>

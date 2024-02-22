@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 const POST_GRAPHQL_FIELDS = `
   slug
   title
@@ -193,4 +195,21 @@ export async function getPostAndMorePosts(
     post: extractPost(entry),
     morePosts: extractPostEntries(entries),
   };
+}
+
+const FormSchema = z.object({
+  first: z.string()
+});
+
+
+export async function submitForm(formData: FormData) {
+
+  const rawData = {
+    fullname: formData.get('fullname'),
+    email: formData.get('email'),
+    subject: formData.get('subject'),
+    message: formData.get('message')
+  }
+  console.log('data', rawData)
+
 }

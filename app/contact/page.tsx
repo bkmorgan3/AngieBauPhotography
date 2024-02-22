@@ -1,5 +1,37 @@
+'use client';
 
-
+import { useFormState } from 'react-dom'
+import { submitForm } from '@/lib/api';
+ 
 export default function ContactPage() {
-    return <div>Contact</div>
+    const initialState = {first: ''};
+    // const [state, dispatch] = useFormState(submitForm, initialState);
+    // console.log("state", state)
+    return (
+        <form action={submitForm} className='rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500'>
+            <h1 className="text-2xl font-bold dark:text-gray-50">Send a message</h1>
+            
+            <label htmlFor="fullname" className="text-gray-500 font-light mt-8 dark:text-gray-50">
+                Full Name<span className='text-red-500'>*</span>
+            </label>
+            <input type="text" id="fullname" name="fullname" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+
+            <label htmlFor="email" className="text-gray-500 font-light mt-4 dark:text-gray-50">
+                Email<span className="text-red-500">*</span>
+            </label>
+            <input type="email" name="email" id="email" className='bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500' />
+
+            <label htmlFor="subject" className='text-gray-500 font-light mt-4 dark:text-gray-50'>
+                Subject<span className='text-red-500'>*</span>
+            </label>
+            <input type="text" name='subject' className='bg-transparent border-b py-2 pl-4 focus:outline-none  focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500' />
+
+            <label htmlFor="message" className="text-gray-500 font-light mt-4 dark:text-gray-50">
+                Message<span className="text-red-500">*</span>
+            </label>
+            <textarea name='message' className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+            <button className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg" type="submit">Send</button>
+          
+        </form>
+    )
 }
