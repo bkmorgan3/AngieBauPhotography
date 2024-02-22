@@ -32,6 +32,9 @@ function Nav() {
        <Link href={`/personal/`} className="mx-1.5 hover:underline">
               Personal
         </Link>
+       <Link href={`/contact/`} className="mx-1.5 hover:underline">
+              Contact Me
+        </Link>
       </div>
     </section>
   );
