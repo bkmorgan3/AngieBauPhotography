@@ -1,11 +1,11 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { EXAMPLE_PATH, CMS_NAME } from "@/lib/constants";
+import { CMS_NAME } from "@/lib/constants";
 import Link from  "next/link";
 
 export const metadata = {
   title: `Angie Bau`,
-  description: `This is a blog built with Next.js and ${CMS_NAME}.`,
+  description: `This is a photo gallery built with Next.js and ${CMS_NAME}.`,
 };
 
 const inter = Inter({
