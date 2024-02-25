@@ -5,7 +5,7 @@ import Link from  "next/link";
 
 export const metadata = {
   title: `Angie Bau`,
-  description: `This is a gallery built with Next.js and ${CMS_NAME}.`,
+  description: `This is an image gallery built with Next.js and ${CMS_NAME}.`,
 };
 
 const inter = Inter({
