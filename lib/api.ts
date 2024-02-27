@@ -194,3 +194,28 @@ export async function getPostAndMorePosts(
     morePosts: extractPostEntries(entries),
   };
 }
+
+export function sendEmail(data: FormData) {
+
+  const emailData = {
+    name: data.get('fullname'),
+    subject: data.get('subject'),
+    email: data.get('email'),
+    message: data.get('message')
+  }
+
+  const apiEndpoint = '/api/email';
+
+
+  fetch(apiEndpoint, {
+    method: 'POST',
+    body: JSON.stringify(emailData)
+  })
+  .then(res => res.json())
+  .then(resp => {
+    alert(resp.message)
+  })
+  .catch(err => {
+    alert(err.message)
+  })
+}
