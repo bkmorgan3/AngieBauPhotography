@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     })
 
     const mailOptions: Mail.Options = { 
-        to: process.env.SEND_TO,
+        to: 'academicbrad@gmail.com',
         subject,
         text: `${name} sent the following message: ${message} reply to ${email}`,
         html: `<b>${name}</b> <br /> Sent the following email <br /> <p>${message}</p> <br /> reply to ${email}`
