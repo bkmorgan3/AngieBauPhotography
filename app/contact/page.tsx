@@ -5,7 +5,7 @@ import { sendEmail } from "@/lib/api"
 export default async function Contact() {
    
     return (
-        <div className="container flex flex-wrap justify-center mx-auto px-5">
+        <div className="container flex justify-center mx-auto px-5">
             <form action={sendEmail} className='rounded-lg shadow-xl flex flex-col px-8 py-8 bg-slate-100'>
                 <h1 className="text-2xl font-bold dark:text-gray-500">Send a message</h1>
                 

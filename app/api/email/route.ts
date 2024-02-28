@@ -5,6 +5,7 @@ import Mail from "nodemailer/lib/mailer"
 
 export async function POST(req: NextRequest) {
     const {email, name, message, subject} = await req.json();
+    
 
     const transport = nodemailer.createTransport({
         service: 'gmail',
@@ -15,10 +16,10 @@ export async function POST(req: NextRequest) {
     })
 
     const mailOptions: Mail.Options = { 
-        from: email,
         to: process.env.SEND_TO,
         subject,
-        text: message
+        text: `${name} sent the following message: ${message} reply to ${email}`,
+        html: `<b>${name}</b> <br /> Sent the following email <br /> <p>${message}</p> <br /> reply to ${email}`
     }
 
     const sendMailPromise = () => 
@@ -32,10 +33,10 @@ export async function POST(req: NextRequest) {
             })
         });
 
-        try {
-            await sendMailPromise()
-            return NextResponse.json({message: 'Email Sent'})
-        } catch(err) {
-            return NextResponse.json({error: err}, {status: 500})
-        }
+    try {
+        await sendMailPromise()
+        return NextResponse.json({message: 'Email Sent'})
+    } catch(err) {
+        return NextResponse.json({error: err}, {status: 500})
+    }
 }
