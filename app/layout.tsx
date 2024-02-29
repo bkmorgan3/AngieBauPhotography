@@ -22,15 +22,23 @@ function Nav() {
         Logo
       </h1>
       <div  className="md:text-left text-lg mt-5 md:pl-8">
-        
        <Link href={`/`} className="mx-1.5 hover:underline">
-              Home
+              Highlights
         </Link>
        <Link href={`/commercial/`} className="mx-1.5 hover:underline">
               Commercial
         </Link>
-       <Link href={`/personal/`} className="mx-1.5 hover:underline">
-              Personal
+       <Link href={`/people/`} className="mx-1.5 hover:underline">
+              People
+        </Link>
+       <Link href={`/motion/`} className="mx-1.5 hover:underline">
+              Motion
+        </Link>
+       <Link href={`/installations/`} className="mx-1.5 hover:underline">
+              Installations
+        </Link>
+       <Link href={`/about/`} className="mx-1.5 hover:underline">
+              About Me
         </Link>
        <Link href={`/contact/`} className="mx-1.5 hover:underline">
               Contact
