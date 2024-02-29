@@ -45,7 +45,7 @@ function Footer() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 mx-3"
-            fill="currentColor"
+            fill="black"
             style={{color: "#c13584"}}
             viewBox="0 0 24 24">
               <title>Angie Bau Instagram</title>
