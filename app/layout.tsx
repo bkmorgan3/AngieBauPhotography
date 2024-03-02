@@ -21,7 +21,7 @@ function Nav() {
       <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
         Logo
       </h1>
-      <div  className="md:text-left text-lg mt-5 md:pl-8">
+      <div  className="hidden md:flex md:text-left text-lg mt-5 md:pl-8">
        <Link href={`/`} className="mx-1.5 hover:underline">
               Highlights
         </Link>
@@ -43,7 +43,22 @@ function Nav() {
        <Link href={`/contact/`} className="mx-1.5 hover:underline">
               Contact
         </Link>
+      
       </div>
+       <button 
+  className="md:hidden sm:flex flex-col justify-center items-center">
+    <span className={`bg-steel-500 block transition-all duration-300 ease-out 
+                    h-0.5 w-6 rounded-sm `} >1
+    </span>
+    <span className={`bg-steel-500 block transition-all duration-300 ease-out 
+                    h-0.5 w-6 rounded-sm my-0.5`} >2
+    </span>
+    <span className={`bg-steel-500 block transition-all duration-300 ease-out 
+                    h-0.5 w-6 rounded-sm `
+                    }>3
+    </span>    
+
+  </button>
     </section>
   );
 }
