@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { CMS_NAME } from "@/lib/constants";
-import Link from  "next/link";
+import { Nav } from "./components/Navbar";
 
 export const metadata = {
   title: `Angie Bau Photography`,
@@ -15,47 +15,7 @@ const inter = Inter({
   display: "swap",
 });
 
-function Nav() {
-  return (
-    <section className=" md:flex-row flex  justify-between mt-16 mb-16 md:mb-12 mx-1.5" >
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Logo
-      </h1>
-      <div className="hidden md:flex md:text-left text-lg mt-5 md:pl-8">
-       <Link href={`/`} className="mx-1.5 hover:underline">
-              Highlights
-        </Link>
-       <Link href={`/commercial/`} className="mx-1.5 hover:underline">
-              Commercial
-        </Link>
-       <Link href={`/people/`} className="mx-1.5 hover:underline">
-              People
-        </Link>
-       <Link href={`/motion/`} className="mx-1.5 hover:underline">
-              Motion
-        </Link>
-       <Link href={`/installations/`} className="mx-1.5 hover:underline">
-              Installations
-        </Link>
-       <Link href={`/about/`} className="mx-1.5 hover:underline">
-              About
-        </Link>
-       <Link href={`/contact/`} className="mx-1.5 hover:underline">
-              Contact
-        </Link>
-      </div>
-        <div className="flex md:hidden">
-         <button className="navbar-burger flex items-center text-blue-600 p-3">
-          <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-					<title>Mobile menu</title>
-					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-				</svg>
-			</button>
-        </div>
-      
-    </section>
-  );
-}
+
 
 function Footer() {
   return (
