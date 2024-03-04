@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { CMS_NAME } from "@/lib/constants";
 import { Nav } from "./components/Navbar";
 
@@ -8,14 +8,12 @@ export const metadata = {
   description: `This is an image gallery built with Next.js and ${CMS_NAME}.`,
 };
 
-const inter = Inter({
+const inter = Roboto({
   variable: "--font-inter",
   weight: '400',
   subsets: ["latin"],
   display: "swap",
 });
-
-
 
 function Footer() {
   return (
