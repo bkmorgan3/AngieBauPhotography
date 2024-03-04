@@ -6,7 +6,7 @@ function cn(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default async function PersonalPage() {
+export default async function PeoplePage() {
       const { isEnabled } = draftMode();
 
   const allPhotos = await getPersonalPhotos(isEnabled);

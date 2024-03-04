@@ -1,10 +1,10 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { CMS_NAME } from "@/lib/constants";
-import Link from  "next/link";
+import { Nav } from "./components/Navbar";
 
 export const metadata = {
-  title: `Angie Bau`,
+  title: `Angie Bau Photography`,
   description: `This is an image gallery built with Next.js and ${CMS_NAME}.`,
 };
 
@@ -15,30 +15,7 @@ const inter = Inter({
   display: "swap",
 });
 
-function Nav() {
-  return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 mx-1.5" >
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Logo
-      </h1>
-      <div  className="md:text-left text-lg mt-5 md:pl-8">
-        
-       <Link href={`/`} className="mx-1.5 hover:underline">
-              Home
-        </Link>
-       <Link href={`/commercial/`} className="mx-1.5 hover:underline">
-              Commercial
-        </Link>
-       <Link href={`/personal/`} className="mx-1.5 hover:underline">
-              Personal
-        </Link>
-       <Link href={`/contact/`} className="mx-1.5 hover:underline">
-              Contact
-        </Link>
-      </div>
-    </section>
-  );
-}
+
 
 function Footer() {
   return (
