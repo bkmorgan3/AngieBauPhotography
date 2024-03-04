@@ -10,7 +10,7 @@ type MobileProps = {
 export default function MobileNav({setIsOpen, isOpen}: MobileProps) {
       
     return (
-            <div className="fixed w-full z-10 top-0 left-0 h-full flex flex-col justify-around items-center bg-slate-800 text-lg mt-5 pl-8">
+            <div className="fixed w-full z-10 top-0 left-0 h-full flex flex-col justify-around items-center bg-slate-800 text-lg mt-5 pl-8 transition-delay-500">
                 <button className="self-end text-white" onClick={() => setIsOpen(!isOpen)}>X</button>
                 <Link onClick={() => setIsOpen(!isOpen)} href={`/`} className="text-white mx-1.5">
                         Highlights
