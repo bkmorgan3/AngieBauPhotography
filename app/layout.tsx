@@ -4,7 +4,7 @@ import { CMS_NAME } from "@/lib/constants";
 import Link from  "next/link";
 
 export const metadata = {
-  title: `Angie Bau`,
+  title: `Angie Bau Photography`,
   description: `This is an image gallery built with Next.js and ${CMS_NAME}.`,
 };
 
@@ -17,11 +17,11 @@ const inter = Inter({
 
 function Nav() {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 mx-1.5" >
+    <section className=" md:flex-row flex  justify-between mt-16 mb-16 md:mb-12 mx-1.5" >
       <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
         Logo
       </h1>
-      <div  className="md:text-left text-lg mt-5 md:pl-8">
+      <div className="hidden md:flex md:text-left text-lg mt-5 md:pl-8">
        <Link href={`/`} className="mx-1.5 hover:underline">
               Highlights
         </Link>
@@ -38,12 +38,14 @@ function Nav() {
               Installations
         </Link>
        <Link href={`/about/`} className="mx-1.5 hover:underline">
-              About Me
+              About
         </Link>
        <Link href={`/contact/`} className="mx-1.5 hover:underline">
               Contact
         </Link>
       </div>
+        <div className="flex md:hidden">Burger</div>
+      
     </section>
   );
 }
