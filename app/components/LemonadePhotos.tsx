@@ -13,7 +13,7 @@ export default async function LemonadePhotos() {
   const leaningGlass = allPhotos[4]
   
   return (
-    <div className="container gap-1 flex flex-wrap justify-evenly i mx-auto px-5 overflow-hidden">
+    <div className="container gap-1 flex flex-wrap justify-evenly items-start mx-auto px-5 overflow-hidden">
       <ContentfulImage
           alt={holdingGlass.photo.description}
           width={500}
