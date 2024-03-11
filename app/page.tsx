@@ -1,5 +1,5 @@
 import { draftMode } from "next/headers";
-import {  getAllPhotos } from "@/lib/api";
+import {  getHighlightsPhotos } from "@/lib/api";
 import ContentfulImage from "@/lib/contentful-image";
 
 function cn(...classes: any[]) {
@@ -9,10 +9,10 @@ function cn(...classes: any[]) {
 export default async function Page() {
   const { isEnabled } = draftMode();
 
-  const allPhotos = await getAllPhotos(isEnabled)
+  const allPhotos = await getHighlightsPhotos(isEnabled)
 
   return (
-    <div className="container flex flex-wrap justify-center mx-auto px-5">
+    <div className="container flex flex-wrap justify-center items-start mx-auto px-5">
       {allPhotos.map(photo => (
         <ContentfulImage
           key={photo.photo.title}

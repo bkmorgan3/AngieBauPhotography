@@ -25,7 +25,7 @@ export default function MobileNav({setIsOpen, isOpen}: MobileProps) {
                         Motion
                 </Link>
                 <Link onClick={() => setIsOpen(!isOpen)} href={`/installations/`} className="text-white mx-1.5">
-                        Installations
+                        Personal
                     </Link>
                 <Link onClick={() => setIsOpen(!isOpen)} href={`/about/`} className="text-white mx-1.5">
                         About
