@@ -17,7 +17,7 @@ export default function DesktopNav() {
                   Motion
             </Link>
             <Link href={`/installations/`} className="mx-1.5 hover:underline">
-                  Installations
+                  Personal
             </Link>
             <Link href={`/about/`} className="mx-1.5 hover:underline">
                   About

@@ -1,30 +1,20 @@
-import { draftMode } from "next/headers";
-import { getCommercialPhotos  } from "@/lib/api";
-import ContentfulImage from "@/lib/contentful-image";
-
-function cn(...classes: any[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import LemonadePhotos from "../components/LemonadePhotos"
+import DrinksPhotos from "../components/DrinksPhotos"
+import BeautyPhotos from "../components/BeautyPhotos"
+import FoodPhotos from "../components/FoodPhotos"
+import FitnessPhotos from "../components/FitnessPhotos"
+import ProductPhotos from "../components/ProductPhotos"
 
 export default async function CommercialPage() {
-      const { isEnabled } = draftMode();
-
-  const allPhotos = await getCommercialPhotos(isEnabled)
-
+ 
   return (
-    <div className="container flex flex-wrap justify-center mx-auto px-5">
-      {allPhotos.map(photo => (
-        <ContentfulImage
-          key={photo.photo.title}
-          alt={photo.photo.description}
-          width={700}
-          height={600}
-          className={cn("md:w-1/2 shadow-small", {
-        "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
-      })}
-        src={photo.photo.url}
-        />
-      ))}
+    <div className="container gap-1 flex flex-wrap md:justify-between justify-center items-start mx-auto px-5 overflow-hidden">
+      <LemonadePhotos />
+      <DrinksPhotos />
+      <BeautyPhotos />
+      <FoodPhotos />
+      <FitnessPhotos />
+      <ProductPhotos />
   </div>
   )
 }
