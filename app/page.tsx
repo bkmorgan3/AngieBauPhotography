@@ -12,17 +12,17 @@ export default async function Page() {
   const allPhotos = await getHighlightsPhotos(isEnabled)
 
   return (
-    <div className="container flex flex-wrap gap-1 justify-center items-start mx-auto px-5">
+    <div  className="container flex flex-wrap  justify-center gap-1 items-start mx-auto px-5">
       {allPhotos.map(photo => (
         <ContentfulImage
           key={photo.photo.title}
           alt={photo.photo.description}
-          width={700}
+          width={600}
           height={600}
-          className={cn("md:w-1/2 shadow-small", {
-        "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
-      })}
-        src={photo.photo.url}
+          className={cn("shadow-small", {
+          "hover:shadow-medium transition-shadow duration-200": photo.photo.url,
+          })}
+          src={photo.photo.url}
         />
       ))}
     </div>
