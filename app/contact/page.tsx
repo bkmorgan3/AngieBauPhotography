@@ -45,7 +45,7 @@ export default function Contact() {
                     ref.current?.reset()
                 }} 
                 
-                className='rounded-lg shadow-xl flex flex-col w-1/2 px-8 py-8 bg-slate-100'
+                className='rounded-lg shadow-xl flex flex-col md:w-1/2 px-8 py-8 bg-slate-100'
                 >
                 <h1 className="text-2xl font-bold  text-slate-950">{didSubmit ? 'Your Message Has Been Sent' : 'Send Me a Message'}</h1>
             
