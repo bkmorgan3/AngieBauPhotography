@@ -1,12 +1,12 @@
 import { draftMode } from "next/headers";
-import { getPersonalPhotos  } from "@/lib/api";
+import { getPhotosByTag  } from "@/lib/api";
 import ContentfulImage from "@/lib/contentful-image";
 
 
 export default async function PeoplePage() {
       const { isEnabled } = draftMode();
 
-  const allPhotos = await getPersonalPhotos(isEnabled);
+  const allPhotos = await getPhotosByTag(isEnabled, "personal");
 
 
   return (

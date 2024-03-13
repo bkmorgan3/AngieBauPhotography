@@ -1,11 +1,11 @@
 import { draftMode } from "next/headers";
-import { getDrinksPhotos  } from "@/lib/api";
+import { getPhotosByTag  } from "@/lib/api";
 import ContentfulImage from "@/lib/contentful-image";
 
 export default async function DrinksPhotos() {
      const { isEnabled } = draftMode();
 
-  const allPhotos = await getDrinksPhotos(isEnabled)
+  const allPhotos = await getPhotosByTag(isEnabled, "drinks")
 
   const lemoneyes = allPhotos[0]
   const fallingLemons = allPhotos[1]
