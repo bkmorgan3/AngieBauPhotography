@@ -1,10 +1,10 @@
 import { draftMode } from "next/headers";
-import { getMotionPhotos  } from "@/lib/api";
-import ContentfulImage from "@/lib/contentful-image";
+import { getPhotosByTag  } from "@/lib/api";
+// import ContentfulImage from "@/lib/contentful-image";   awaiting updated motion file
 
 export default async function MotionPage() {
     const {isEnabled} = draftMode();
-    const motion = await getMotionPhotos(isEnabled);
+    const motion = await getPhotosByTag(isEnabled, "motion");
 
     return <div  className="container flex flex-col md:flex-row justify-center items-center md:items-start gap-2 mx-auto px-5 ">
         {motion.map(vid => (

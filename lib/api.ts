@@ -24,239 +24,28 @@ function extractPhotoEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.photoCollection?.items;
 }
 
-
-export async function getPersonalPhotos(isDraftMode: boolean): Promise<any[]> {
+export async function getPhotosByTag(isDraftMode: boolean, tag: string ) :Promise<any[]> {
+  console.log("TYPE", tag)
   const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "personal"}}}) {
-    items {
-      photo {
-        url
-        width
-        title
-        description
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
+    query {
+      photoCollection(where: {contentfulMetadata: {tags: {id_contains_some: "${tag}"}}}) {
+        items {
+          photo {
+            url
+            title
+            description
+            contentfulMetadata {
+              tags {
+                name
+                id
+              }
+            }
           }
         }
       }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-
-export async function getMotionPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "motion"}}}) {
-    items {
-      photo {
-        url
-        width
-        title
-        description
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getHighlightsPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "highlights"}}}) {
-    items {
-      photo {
-        url
-        width
-        title
-        description
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-
-export async function getLemonadePhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "lemonade"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getDrinksPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "drinks"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getBeautyPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "beauty"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getFoodPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "foodProducts"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getFitnessPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "fitness"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getProductPhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "products"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
-export async function getPeoplePhotos(isDraftMode: boolean): Promise<any[]> {
-  const entries = await fetchGraphQL(`
-  query {
-  photoCollection( where: {contentfulMetadata: { tags: {id_contains_some: "people"}}}) {
-    items {
-      photo {
-        url
-        title
-        description
-        width
-        height
-        contentfulMetadata {
-          tags {
-            name
-            id
-          }
-        }
-      }
-    }
-  }
-}`, isDraftMode)
-return extractPhotoEntries(entries)
-} 
+    }`, isDraftMode)
+    return extractPhotoEntries(entries)
+}
 
 export async function getAllPhotos(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
