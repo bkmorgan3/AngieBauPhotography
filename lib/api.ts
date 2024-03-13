@@ -25,7 +25,6 @@ function extractPhotoEntries(fetchResponse: any): any[] {
 }
 
 export async function getPhotosByTag(isDraftMode: boolean, tag: string ) :Promise<any[]> {
-  console.log("TYPE", tag)
   const entries = await fetchGraphQL(`
     query {
       photoCollection(where: {contentfulMetadata: {tags: {id_contains_some: "${tag}"}}}) {
