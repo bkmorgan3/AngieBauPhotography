@@ -6,29 +6,18 @@ export default async function DrinksPhotos() {
      const { isEnabled } = draftMode();
 
   const allPhotos = await getPhotosByTag(isEnabled, "drinks")
-
-  const lemoneyes = allPhotos[0]
-  const fallingLemons = allPhotos[1]
-  const holdingGlass = allPhotos[0]
-  const pouring = allPhotos[3]
-  const leaningGlass = allPhotos[4]
   
   return (
-    <div className="container gap-1 flex flex-wrap justify-evenly items-start mx-auto px-5 overflow-hidden">
-        <ContentfulImage
-          alt={holdingGlass.photo.description}
-          width={400}
-          height={600}
-          src={holdingGlass.photo.url}
-         
-        />
-        <ContentfulImage
-          alt={fallingLemons.photo.description}
-          width={400}
-          height={600}
-          src={fallingLemons.photo.url}
-         
-        />
+    <div className="container gap-1 flex flex-wrap justify-center items-start mx-auto px-5 overflow-hidden">
+        {allPhotos.map(photo => (
+          <ContentfulImage
+            src={photo.photo.url}
+            alt={photo.photo.description}
+            width={500}
+            height={200}
+            className="w-auto"
+          />
+        ))}
     </div>
   )
 }

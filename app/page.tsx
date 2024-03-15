@@ -17,7 +17,7 @@ export default async function Page() {
         <ContentfulImage
           key={photo.photo.title}
           alt={photo.photo.description}
-          width={600}
+          width={500}
           height={600}
           className={cn("shadow-small", {
           "hover:shadow-medium transition-shadow duration-200": photo.photo.url,

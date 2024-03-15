@@ -14,7 +14,7 @@ export default async function LemonadePhotos() {
   
   return (
     <div className="container gap-1 flex flex-wrap justify-center mx-auto px-5 overflow-hidden">
-      <ContentfulImage
+      {/* <ContentfulImage
           alt={holdingGlass.photo.description}
           width={500}
           height={600}
@@ -38,18 +38,28 @@ export default async function LemonadePhotos() {
       />
       <ContentfulImage
           alt={leaningGlass.photo.description}
-          width={400}
+          width={500}
           height={600}
           src={leaningGlass.photo.url}
           className="object-cover h-screen"
         />
       <ContentfulImage
           alt={fallingLemons.photo.description}
-          width={400}
+          width={500}
           height={600}
           src={fallingLemons.photo.url}
-          className="object-cover  h-screen"
-        /> 
+          className="object-cover self-start"
+        />  */}
+
+        {allPhotos.map(photo => (
+          <ContentfulImage 
+            src={photo.photo.url}
+            alt={photo.photo.description}
+            width={500}
+            height={200}
+            className="w-auto"
+          />
+        ))}
   </div>
   )
 }

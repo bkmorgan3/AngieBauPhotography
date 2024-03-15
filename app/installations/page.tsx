@@ -18,6 +18,7 @@ export default async function PeoplePage() {
           width={500}
           height={600}
           src={photo.photo.url}
+          className="object-cover h-screen"
         />
       ))}
     </div>

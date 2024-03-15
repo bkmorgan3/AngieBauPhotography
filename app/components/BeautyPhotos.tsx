@@ -14,12 +14,13 @@ export default async function BeautyPhotos() {
   const leaningGlass = allPhotos[4]
   
   return (
-    <div className="container gap-1 flex flex-wrap justify-evenly items-start mx-auto px-5 overflow-hidden">
+    <div className="container gap-1 flex flex-wrap justify-center items-start mx-auto px-5 overflow-hidden">
         <ContentfulImage
           alt={holdingGlass.photo.description}
           width={400}
           height={600}
           src={holdingGlass.photo.url}
+          
         
         />
         <ContentfulImage
@@ -27,6 +28,7 @@ export default async function BeautyPhotos() {
           width={400}
           height={600}
           src={fallingLemons.photo.url}
+          
         
         />
         <ContentfulImage
@@ -34,6 +36,7 @@ export default async function BeautyPhotos() {
           width={400}
           height={600}
           src={pouring.photo.url}
+          
         
         />
     </div>
