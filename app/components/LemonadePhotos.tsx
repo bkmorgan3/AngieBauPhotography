@@ -13,42 +13,43 @@ export default async function LemonadePhotos() {
   const leaningGlass = allPhotos[4]
   
   return (
-    <div className="container gap-1 flex flex-wrap justify-evenly items-start mx-auto px-5 overflow-hidden">
+    <div className="container gap-1 flex flex-wrap justify-center mx-auto px-5 overflow-hidden">
       <ContentfulImage
           alt={holdingGlass.photo.description}
           width={500}
           height={600}
           src={holdingGlass.photo.url}
+          className="object-cover h-screen"
         />
 
-        <ContentfulImage
-          alt={pouring.photo.description}
-          width={500}
-          height={600}
-          src={pouring.photo.url}
-        />
-         <ContentfulImage
-          alt={lemoneyes.photo.description}
-          width={500}
-          height={600}
-          src={lemoneyes.photo.url}
-        />
-
-     
+      <ContentfulImage
+        alt={pouring.photo.description}
+        width={500}
+        height={600}
+        src={pouring.photo.url}
+        className="object-cover h-screen"
+      />
+      <ContentfulImage
+        alt={lemoneyes.photo.description}
+        width={500}
+        height={600}
+        src={lemoneyes.photo.url}
+        className="object-cover h-screen"
+      />
       <ContentfulImage
           alt={leaningGlass.photo.description}
           width={400}
           height={600}
           src={leaningGlass.photo.url}
-          // className="my-2"
+          className="object-cover h-screen"
         />
       <ContentfulImage
           alt={fallingLemons.photo.description}
           width={400}
           height={600}
           src={fallingLemons.photo.url}
-          // className="my-3"
-        />
+          className="object-cover  h-screen"
+        /> 
   </div>
   )
 }
