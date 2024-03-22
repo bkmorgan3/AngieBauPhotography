@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gallery {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);;
+    grid-template-areas: 
+        ". . pouring pouring leaning leaning"
+        ". . pouring pouring leaning leaning"
+        ". . pouring pouring falling falling"
+        ". . pouring pouring falling falling"
+        ". . eyes eyes eyes eyes"
+        ". . eyes eyes eyes eyes"
+        ". . eyes eyes eyes eyes"
+        ". . eyes eyes eyes eyes"
+    
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.pouring {
+    grid-area: pouring;
+    overflow: hidden;
+    /* object-position: top 100px; */
+}
+
+.leaning {
+    grid-area: leaning;
+    overflow: hidden;
+   
+}
+
+.falling {
+    grid-area: falling;
+    overflow: hidden;
+}
+
+.eyes {
+    grid-area: eyes;
+    overflow: hidden;
+} 
+
+@media (max-width: 1024px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
