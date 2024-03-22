@@ -8,13 +8,13 @@ import ProductPhotos from "../components/ProductPhotos"
 export default async function CommercialPage() {
  
   return (
-    <div className="container gap-1 flex flex-wrap md:justify-between justify-center items-start mx-auto px-5 overflow-hidden">
+    <div className="container gap-1 flex items-start mx-auto px-5  h-full overflow-visible">
       <LemonadePhotos />
-      <DrinksPhotos />
+      {/* <DrinksPhotos />
       <BeautyPhotos />
       <FoodPhotos />
       <FitnessPhotos />
-      <ProductPhotos />
+      <ProductPhotos /> */}
   </div>
   )
 }
