@@ -49,13 +49,6 @@
 
 @media (max-width: 1024px) {
     .gallery {
-        display: flex;
-        flex-direction: column;
-    }
-    .gallery img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+        display: none;
     }
 }
