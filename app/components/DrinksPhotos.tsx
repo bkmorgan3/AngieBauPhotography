@@ -6,14 +6,15 @@ export default async function DrinksPhotos() {
      const { isEnabled } = draftMode();
 
   const allPhotos = await getPhotosByTag(isEnabled, "drinks")
-  console.log('a',allPhotos)
-  const drinker = allPhotos[0]
-  const skater = allPhotos[1]
-  const pineapple = allPhotos[2]
-  const can = allPhotos[3]
+ 
+  const can = allPhotos[0]
+  const drinker = allPhotos[1]
+  const skater = allPhotos[2]
+  const pineapple = allPhotos[3]
+  
   return (
     <div className="container mx-auto px-5 mt-1 ">
-      <div className="gallery hidden lg:grid">
+      <div className="drinks hidden lg:grid">
         <div className="can">
           <ContentfulImage src={can.photo.url} alt={can.photo.description} width={500} height={10} />
         </div>
@@ -30,6 +31,7 @@ export default async function DrinksPhotos() {
       <div className="flex flex-wrap justify-center lg:hidden mx-auto gap-1">
         {allPhotos.map(img => (
           <ContentfulImage
+            key={img.photo.description}
             src={img.photo.url}
             alt={img.photo.description}
             width={500}

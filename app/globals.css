@@ -28,7 +28,6 @@
 .pouring {
     grid-area: pouring;
     overflow: hidden;
-    /* object-position: top 100px; */
 }
 
 .leaning {
@@ -49,6 +48,47 @@
 
 @media (max-width: 1024px) {
     .gallery {
+        display: none;
+    }
+}
+
+
+.drinks {
+    
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+        ". . can can skater skater"
+        ". . can can skater skater"
+        ". . can can skater skater"
+        ". . can can skater skater"
+        ". . drinker drinker pineapple pineapple"
+        ". . drinker drinker pineapple pineapple"
+        ". . drinker drinker pineapple pineapple"
+        ". . drinker drinker pineapple pineapple"
+        
+}
+
+.can {
+    grid-area: can;
+}
+
+.skater {
+    grid-area: skater;
+}
+
+.drinker {
+    grid-area: drinker;
+}
+
+.pineapple {
+    grid-area: pineapple;
+}
+
+@media (max-width: 1024px) {
+    .drinks {
         display: none;
     }
 }
