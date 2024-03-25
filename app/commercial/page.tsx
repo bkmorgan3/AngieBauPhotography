@@ -8,10 +8,10 @@ import ProductPhotos from "../components/ProductPhotos"
 export default async function CommercialPage() {
  
   return (
-    <div className="container gap-1 flex items-start mx-auto px-5 ">
+    <div className="container gap-1mx-auto px-5 ">
       <LemonadePhotos />
-      {/* <DrinksPhotos />
-      <BeautyPhotos />
+     <DrinksPhotos />
+      {/*  <BeautyPhotos />
       <FoodPhotos />
       <FitnessPhotos />
       <ProductPhotos /> */}

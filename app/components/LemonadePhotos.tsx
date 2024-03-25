@@ -30,6 +30,7 @@ export default async function LemonadePhotos() {
       <div className="flex flex-wrap justify-center lg:hidden mx-auto gap-1">
         {allPhotos.map(img => (
           <ContentfulImage
+            key={img.photo.description}
             src={img.photo.url}
             alt={img.photo.description}
             width={500}
