@@ -51,6 +51,8 @@
     .gallery {
         display: flex;
         flex-direction: column;
+        background-color: red;
+        display: none;
     }
     .gallery img {
         display: block;

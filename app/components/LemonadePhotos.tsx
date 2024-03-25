@@ -12,18 +12,30 @@ export default async function LemonadePhotos() {
       const lemoneyes = allPhotos[3]
     
   return (
-    <div className="container gallery mx-auto px-5 h-screen">
-      <div className="pouring">
-        <img src={pouring.photo.url} alt={pouring.photo.description} />
+    <div className="container mx-auto px-5 ">
+      <div className="gallery hidden lg:grid">
+        <div className="pouring">
+          <ContentfulImage src={pouring.photo.url} alt={pouring.photo.description} width={500} height={10} />
+        </div>
+        <div  className="leaning">
+          <ContentfulImage src={leaning.photo.url} alt={leaning.photo.description} width={500} height={10} />
+        </div>
+        <div className="falling">
+          <ContentfulImage src={falling.photo.url} alt={falling.photo.description} width={500} height={10}/>
+        </div>
+        <div className="eyes">
+          <ContentfulImage src={lemoneyes.photo.url} alt={lemoneyes.photo.description}width={600} height={10} />
+        </div>
       </div>
-      <div  className="leaning">
-        <img src={leaning.photo.url} alt={leaning.photo.description}  />
-      </div>
-      <div className="falling">
-        <img src={falling.photo.url} alt={falling.photo.description} />
-      </div>
-      <div className="eyes">
-        <img src={lemoneyes.photo.url} alt={lemoneyes.photo.description} />
+      <div className="flex flex-wrap justify-center lg:hidden mx-auto gap-1">
+        {allPhotos.map(img => (
+          <ContentfulImage
+            src={img.photo.url}
+            alt={img.photo.description}
+            width={500}
+            height={100}
+            />
+        ))}
       </div>
     </div>
   )
