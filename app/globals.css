@@ -52,19 +52,16 @@
     }
 }
 
-
 .drinks {
-    
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     grid-template-areas:
         ". . can can skater skater"
         ". . can can skater skater"
         ". . can can skater skater"
         ". . can can skater skater"
-        ". . drinker drinker pineapple pineapple"
         ". . drinker drinker pineapple pineapple"
         ". . drinker drinker pineapple pineapple"
         ". . drinker drinker pineapple pineapple"
@@ -89,6 +86,83 @@
 
 @media (max-width: 1024px) {
     .drinks {
+        display: none;
+    }
+}
+
+.beauty {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+        ". . serum serum cleaners cleaners"
+        ". . serum serum cleaners cleaners"
+        ". . serum serum cleaners cleaners"
+        ". . serum serum cleaners cleaners"
+        ". . venice venice stacked stacked"
+        ". . venice venice stacked stacked"
+        ". . venice venice stacked stacked"
+        ". . venice venice stacked stacked"
+
+}
+
+.serum {
+    grid-area: serum;
+}
+
+.venice {
+    grid-area: venice;
+}
+
+.stacked {
+    grid-area: stacked;
+}
+
+.cleaners {
+    grid-area: cleaners;
+}
+
+@media (max-width: 1024px) {
+    .beauty {
+        display: none;
+    }
+}
+.food {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+        ". . besitos besitos chopsticks chopsticks"
+        ". . besitos besitos chopsticks chopsticks"
+        ". . besitos besitos chopsticks chopsticks"
+        ". . besitos besitos chopsticks chopsticks"
+        ". . honey honey pablo pablo"
+        ". . honey honey pablo pablo"
+        ". . honey honey pablo pablo"
+        ". . honey honey pablo pablo"
+
+}
+
+.besitos {
+    grid-area: besitos;
+}
+
+.pablo {
+    grid-area: pablo;
+}
+
+.honey {
+    grid-area: honey;
+}
+
+.chopsticks {
+    grid-area: chopsticks;
+}
+
+@media (max-width: 1024px) {
+    .food {
         display: none;
     }
 }
