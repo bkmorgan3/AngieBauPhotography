@@ -16,7 +16,7 @@ export default async function AboutPage() {
             <ContentfulImage 
                 src={angie.photo.url}
                 alt={angie.photo.description}
-                width={400}
+                width={500}
                 height={200}
                 key={angie.photo.url}
                 className="rounded-md sm:w-1/2 mx-auto sm:mb-5"

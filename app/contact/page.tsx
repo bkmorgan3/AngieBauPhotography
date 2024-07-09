@@ -37,7 +37,8 @@ export default function Contact() {
 }
    
     return (
-        <div className="container flex justify-center mx-auto px-5 mb-10">
+        <div className="container flex justify-center mx-auto px-5 mb-10 h-screen grow">
+            <div className="w-4/5 max-w-lg">
             <form 
                 ref={ref}
                 action={async (formData) => {
@@ -45,7 +46,7 @@ export default function Contact() {
                     ref.current?.reset()
                 }} 
                 
-                className='rounded-lg shadow-xl flex flex-col md:w-1/2 px-8 py-8 bg-slate-100'
+                className='rounded-lg shadow-xl flex flex-col md:w-4/5 px-8 py-8 bg-slate-100 ml-auto mr-auto'
                 >
                 <h1 className="text-2xl font-bold  text-slate-950">{didSubmit ? 'Your Message Has Been Sent' : 'Send Me a Message'}</h1>
             
@@ -70,6 +71,7 @@ export default function Contact() {
                 <textarea disabled={isLoading || didSubmit}  name='message' className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" required></textarea>
                 <button disabled={isLoading || didSubmit} className="px-10 mt-8 py-2 bg-slate-950 text-gray-50 font-light rounded-md text-lg disabled:opacity-50" type="submit">{isLoading ? 'Sending' : didSubmit ? 'Submitted' : 'Send'}</button>
             </form>
+            </div>
         </div>
     )
 }
