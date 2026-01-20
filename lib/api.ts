@@ -1,6 +1,6 @@
+import {ContentfulImageProps} from './contentful-image'
 
-
-async function fetchGraphQL(query: string, preview = false): Promise<any> {
+async function fetchGraphQL(query: string, preview = false): Promise<ContentfulImageProps> {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
@@ -20,11 +20,11 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
 }
 
 
-function extractPhotoEntries(fetchResponse: any): any[] {
+function extractPhotoEntries(fetchResponse: ContentfulImageProps): ContentfulImageProps[] {
   return fetchResponse?.data?.photoCollection?.items;
 }
 
-export async function getPhotosByTag(isDraftMode: boolean, tag: string ) :Promise<any[]> {
+export async function getPhotosByTag(isDraftMode: boolean, tag: string ) :Promise<ContentfulImageProps[]> {
   const entries = await fetchGraphQL(`
     query {
       photoCollection(where: {contentfulMetadata: {tags: {id_contains_some: "${tag}"}}}) {
@@ -46,7 +46,7 @@ export async function getPhotosByTag(isDraftMode: boolean, tag: string ) :Promis
     return extractPhotoEntries(entries)
 }
 
-export async function getAllPhotos(isDraftMode: boolean): Promise<any[]> {
+export async function getAllPhotos(isDraftMode: boolean): Promise<ContentfulImageProps[]> {
   const entries = await fetchGraphQL(
     `query {
   photoCollection {
